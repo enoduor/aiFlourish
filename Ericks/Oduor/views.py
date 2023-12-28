@@ -4,9 +4,20 @@ from .addstuffsform import addStuffs
 from django.http import HttpResponse
 
 # Create your views here.
-
+def truncate_text(text):
+    full_stops = text.split('.')
+    truncated_text = '.'.join(full_stops[:2])
+    return truncated_text
+def truncate_steps(text):
+    full_stops = text.split('.')
+    truncated_text = '.'.join(full_stops[:4])
+    return truncated_text
 def home(request):
     Details = stuffs.objects.all()
+    for Detail in Details:
+        Detail.description = truncate_text(Detail.description)
+        Detail.tutorial_tool = truncate_steps(Detail.tutorial_tool)
+        Detail.ad = truncate_text(Detail.ad)
     return render(request,'index.html',{'Details':Details})
 
 def addStuffsView(request):
