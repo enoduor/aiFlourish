@@ -1,0 +1,12 @@
+{% extends 'index.html'%}
+
+{% block container %}   <div class="featured-tools-container">
+
+    {% for Detail in Details %}
+      
+    <a href= "{{ Detail.youtube_link }}"><div class="featured-tools-list-item">{{Detail.name_of_tool}}</div></a>
+      
+    {% endfor %}
+      
+  </div>
+  {% endblock %} 

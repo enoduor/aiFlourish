@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import stuffs
 from .addstuffsform import addStuffs
 from django.http import HttpResponse
+from openpyxl import load_workbook
 
 # Create your views here.
 def truncate_text(text):
@@ -39,3 +40,16 @@ def addStuffsView(request):
 
     return render (request, 'Addstuffsform.html', {'form':form})
 
+def import_from_excel(request): 
+    if request.method == 'POST':
+        excel_file = request.FILES['excel_file']
+        wb = load_workbook(excel_file)
+        ws = wb.active
+#min_row = 2, 
+        for row in ws.iter_rows(min_row = 2, values_only=True):
+            name, description, sign_up, ad, video, web_link = row
+            stuffs.objects.create(name_of_tool = name, description=description,tutorial_tool=sign_up, ad=ad, youtube_link=video, website_link=web_link)
+
+        return render(request, 'import_success.html')#when inside the for loop, it only returns one row.
+    
+    return render(request, 'import_form.html')
