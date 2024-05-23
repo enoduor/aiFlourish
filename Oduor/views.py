@@ -140,17 +140,46 @@ def VideoView(request):
     categories = category.objects.all()
     selected_categories = request.GET.getlist('categories[]', [])
 
+    t_count = stuffs.objects.count()
+    count = t_count + 850
+
+    # if selected_categories:
+    #     Details = Details.filter(categories__name__in=selected_categories).distinct()
 
     if selected_categories:
         Details = Details.filter(categories__name__in=selected_categories).distinct()
+        c_count = Details.count()
+    else:
+        c_count = count
 
-
+    
     # Search functionality for Stuffs
     search_query = request.GET.get('search')
 
     if search_query:
         Details = Details.filter(Q(name_of_tool__icontains=search_query) )
 
-    context = {'Details': Details, 'categories': categories}
+    context = {'Details': Details, 'categories': categories, 'count':count, 'c_count':c_count }
     return render(request,'video.html',context)
+
+def filtered_video(request):
+    Details = stuffs.objects.all()
+    selected_categories = request.GET.getlist('categories[]', [])
+    # count functionality
+    t_count = stuffs.objects.count()
+    count = t_count + 850
+
+    if selected_categories:
+        Details = Details.filter(categories__name__in=selected_categories).distinct()
+        c_count = Details.count()
+    else:
+        c_count = count
+
+    search_query = request.GET.get('search')
+
+    if search_query:
+        Details = Details.filter(Q(name_of_tool__icontains=search_query))
+
+    context = {'Details': Details, 'count':count, 'c_count':c_count}
+    return render(request, 'filtered_video.html', context)
 

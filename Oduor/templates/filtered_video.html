@@ -1,0 +1,47 @@
+{% extends 'index.html'%}
+
+{%block main%}
+<main class="container" >
+    <hgroup class="head">
+        <!-- <div class="spacer3"></div> -->
+        <h1 style="font-size: 48px; font-weight: normal;" >Featured Tools</h1>
+        <!-- <h2>Explore our curated list of AI tools.</h2> -->
+        
+            <h2> <b style="color: rgb(4, 161, 213);">{{ c_count }} </b>out of a total of <b style="color: rgb(4, 161, 213);">{{ count }} </b>tools</h2>
+        
+    </hgroup>
+<div class="tools-container" >
+ 
+</div>
+<main class="container" >
+    <div class="featured-tools-container" >
+        {% for Detail in Details %}
+        <a href= "{{ Detail.youtube_link }}"><div class="featured-tools-list-item">{{Detail.name_of_tool}}</div></a>
+        {% endfor %}
+    </div>
+  </div>
+
+</main>
+</main>
+{% endblock %}
+
+ {% block container %} 
+  <main class="container" >
+    <div class="apply-filter-btn" > 
+        <a href="https://forms.gle/kT4cvWi76UwEu6A1A" style="text-decoration: none;">
+         <button id="filter_btn"  style="color: black; background-color: #ddd;">Contact Us </button>
+        </a>
+     </div> 
+</main>
+{% endblock %}
+
+{% block Subscribe %}
+
+{% endblock %}
+{% block footer %}
+<div class="footer">
+    <small>
+        <a href="https://www.umso.com/dpa">Privacy Policy</a> • <a href="#">Terms of Service</a>
+    </small>
+</div>
+{% endblock %}

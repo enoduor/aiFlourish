@@ -10,5 +10,6 @@ urlpatterns = [
      path('tool/<int:stuff_id>/', views.ToolDetail, name='tool'),
      path('video/', views.VideoView, name = 'videos'),
      path('filtered-tools/', views.filtered_tools, name='filtered_tools'),
+     path('filtered-videos/', views.filtered_video, name='filtered_video'),
 ]
    

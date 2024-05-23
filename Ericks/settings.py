@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-my4$fo99mqhay0)3hd@6q^$i*e0%a_86m_qgih9rbp_=a(!^=4
 DEBUG = True
 
 ALLOWED_HOSTS = ['aitools.oduor.net']
-#ALLOWED_HOSTS = ['.oduor.net','aitools.oduor.net','0353-102-216-86-62.ngrok-free.app', 'localhost', '127.0.0.1', '3.128.156.10']
+ALLOWED_HOSTS = ['.oduor.net','aitools.oduor.net','0353-102-216-86-62.ngrok-free.app', 'localhost', '127.0.0.1', '3.128.156.10']
 
 
 # Application definition
