@@ -29,7 +29,7 @@ def home(request):
         Detail.ad = Detail.ad
 
 
-    categories = category.objects.all()
+    categories = category.objects.all().order_by('name')
     selected_categories = request.GET.getlist('categories[]', [])
      # count functionality
     t_count = stuffs.objects.count()
@@ -137,7 +137,7 @@ def ToolDetail(request, stuff_id):
 
 def VideoView(request):
     Details = stuffs.objects.all()
-    categories = category.objects.all()
+    categories = category.objects.all().order_by('name')
     selected_categories = request.GET.getlist('categories[]', [])
 
     t_count = stuffs.objects.count()
