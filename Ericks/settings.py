@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,15 +25,13 @@ SECRET_KEY = 'django-insecure-my4$fo99mqhay0)3hd@6q^$i*e0%a_86m_qgih9rbp_=a(!^=4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aitools.oduor.net']
-ALLOWED_HOSTS = ['.oduor.net','aitools.oduor.net','0353-102-216-86-62.ngrok-free.app', 'localhost', '127.0.0.1', '3.128.156.10']
+ALLOWED_HOSTS = ['aitools.myinsightiq.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.128.156.10']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    # 'jazzmin',
-
     'import_export',
 
     'django.contrib.admin',
@@ -121,13 +119,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'jazzmin/'
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'jazzmin/')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
