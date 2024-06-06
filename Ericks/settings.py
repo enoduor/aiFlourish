@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['.oduor.net','aitools.oduor.net','0353-102-216-86-62.ngrok-free
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    # 'jazzmin',
 
     'import_export',
 

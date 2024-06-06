@@ -261,8 +261,7 @@
                 width: 90%;
                 margin-left: 5%;
             }
-        }
-        
+        }        
     </style> 
     <title>AI Tools Hub</title>
     <script>
@@ -292,13 +291,13 @@
 <body>
 {% block header%}
 <!-- <header style="background-color: blanchedalmond;"> -->
-    <nav class="container">
+    <nav class="container" style="width: 894px;">
         <ul>
             <li><a href="{% url 'home'%}" style="color: rgb(106, 103, 103);">Home of No-Code AI Tools</a></li>
         </ul>
         <ul>
-            <li><a href="{% url 'addStuffsViews' %}">Add Tools</a></li>
-            <li><a href="{% url 'videos' %}">Video Search</a></li>
+           
+            <li><a href="{% url 'videos' %}">Search 4000+ Video Demos</a></li>
             <!-- <li><a href="https://oduor.net/newsletter">Newsletter</a></li>
             <li><a href="https://buy.stripe.com/14k9AS3WS9Qb04UaEG">Use Case Pack</a></li> -->
             <!-- <li><a href="https://buy.stripe.com/8wM3cu3WS1jFbNC4gh">Income Use Case</a></li> -->
@@ -310,9 +309,10 @@
 <!-- <div class="spacer2"></div> -->
 <main class="container" >
     <section>
+        
         <hgroup class="head">
             <!-- <div class="spacer1"></div> -->
-            <h1 style="font-size: 48px; font-weight: normal;">Boost traffic, leads, and sales With AI Tools!</h1>
+            <h1 style="font-size: 44px; font-weight: normal;">Boost traffic, leads, and sales With AI Tools!</h1>
             <h2></h2>
             <!-- <div class="spacer2"></div> -->
             <!-- <h2 >Explore the Latest No-Code AI Tools</h2> -->
@@ -358,7 +358,7 @@
     <hr />
     <hgroup class="head">
         <!-- <div class="spacer3"></div> -->
-        <h1 style="font-size: 48px; font-weight: normal;" >Featured Tools</h1>
+        <h1 style="font-size: 44px; font-weight: normal;" >Featured Tools</h1>
         <!-- <h2>Explore our curated list of AI tools.</h2> -->
         
             <h2> <b style="color: rgb(4, 161, 213);">{{ c_count }} </b>out of a total of <b style="color: rgb(4, 161, 213);">{{ count }} </b>tools</h2>
