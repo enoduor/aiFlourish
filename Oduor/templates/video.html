@@ -4,32 +4,15 @@
 <main class="container" >
     <section>
         <hgroup class="head">
-            <!-- <div class="spacer1"></div> -->
             <h1 style="font-size: 42px; font-weight: normal;">Boost traffic, leads, and sales With AI Tools!</h1>
             <h2></h2>
-            <!-- <div class="spacer2"></div> -->
-            <!-- <h2 >Explore the Latest No-Code AI Tools</h2> -->
         </hgroup>
-        <!-- <form class="search-form" action="{% url 'home' %}">
-            <div class="searchy">
-                <input type="search" id="search-bar" name="search" placeholder="Search AI Tools..." aria-label="Search AI Tools">
-                <button type="submit">Search</button>
-            </div>
-        </form>
-        <div class="spacer1"></div>
-        <div class="spacer2"></div>
-         -->
-        <hgroup class="head">
-        <!-- <div class="spacer3"></div> -->
-        <!-- <hr />
-        <div class="spacer3"></div> -->
         
-        <!-- <h1 style="font-size: 48px; font-weight: normal;">Categories</h1> -->
+        <hgroup class="head">
         
         <h2>Explore the Tools by Category</h2>
         
     </hgroup>
-    <!-- <div class="spacer3"></div> -->
         <form method="get"  id="main-form" action="{% url 'filtered_video' %}">
             <div class="category-list" {% if selected_categories %} style="display: none;" {% endif %}>
                 {% for category in categories %}
@@ -45,17 +28,11 @@
         </div> 
     </form>
     <div class="spacer2"></div>
-    <!-- <div class="spacer3"></div> -->
     
-    <!-- <div class="spacer3"></div> -->
     <hr />
     <hgroup class="head">
-        <!-- <div class="spacer3"></div> -->
         <h1 style="font-size: 48px; font-weight: normal;" >Featured Tools</h1>
-        <!-- <h2>Explore our curated list of AI tools.</h2> -->
-        
-            <h2> <b style="color: rgb(4, 161, 213);">{{ c_count }} </b>out of a total of <b style="color: rgb(4, 161, 213);">{{ count }} </b>tools</h2>
-        
+        <h2> <b style="color: rgb(4, 161, 213);">{{ c_count }} </b>out of a total of <b style="color: rgb(4, 161, 213);">{{ count }} </b>tools</h2> 
     </hgroup>
         {% endblock %}
 

@@ -23,10 +23,6 @@
             padding: 0;
         }
 
-        /* #h-nav{
-            width: 894px;
-        } */
-
         @media  (min-width: 992px) {
             #h-nav{
             width: 894px;
@@ -78,14 +74,6 @@
             width: 10vw; /* Responsive width */
             height: 4vh; /* Reduced height for smaller screens */
         }
-
-        /* Adjustments for smaller screens
-        @media (max-width: 480px) {
-            .apply-filter-btn button {
-                font-size: 10vw;
-                width: 30vw;
-            }
-        } */
 
         button {
             width: 30%;
@@ -301,9 +289,9 @@
       </script>
 </head>
 {% endblock %}
+
 <body>
 {% block header%}
-<!-- <header style="background-color: blanchedalmond;"> -->
     <nav class="container" id="h-nav">
         <ul>
             <li><a href="{% url 'home'%}" style="color: rgb(106, 103, 103);">Home of No-Code AI Tools</a></li>
@@ -314,10 +302,9 @@
             <li><a href=" https://myinsightiq.com/">myInsightIQ</a></li>
         </ul>
     </nav> 
-<!-- </header> -->
 {% endblock %}
+
 {% block main%}
-<!-- <div class="spacer2"></div> -->
 <main class="container" >
     <section>
         
@@ -326,37 +313,39 @@
             <h2></h2>
         </hgroup>
 
-    <hgroup class="head">
-        
-        <h2>Explore the Tools by Category</h2>
-        
-    </hgroup>
+        <hgroup class="head">
+            
+            <h2>Explore the Tools by Category</h2>
+            
+        </hgroup>
 
-    <form method="get"  id="main-form" action="{% url 'filtered_tools' %}">
-        <div class="category-list" {% if selected_categories %} style="display: none;" {% endif %}>
-            {% for category in categories %}
-                <label class="category-list-item">
-                    <input type="checkbox" name="categories[]" value="{{ category.name }}" {% if category.name in selected_categories %}checked{% endif %} {% if selected_categories %}disabled{% endif %}>
-                    {{ category.name }}
-                </label>
-            {% endfor %}
-        </div>
+        <form method="get"  id="main-form" action="{% url 'filtered_tools' %}">
+            <div class="category-list" {% if selected_categories %} style="display: none;" {% endif %}>
+                {% for category in categories %}
+                    <label class="category-list-item">
+                        <input type="checkbox" name="categories[]" value="{{ category.name }}" {% if category.name in selected_categories %}checked{% endif %} {% if selected_categories %}disabled{% endif %}>
+                        {{ category.name }}
+                    </label>
+                {% endfor %}
+            </div>
 
-        <div class="apply-filter-btn"> 
-        <a> <button id="filter_btn" type="submit">Apply Filter</button></a>
-    </div> 
-    </form>
+            <div class="apply-filter-btn"> 
+                <a> <button id="filter_btn" type="submit">Apply Filter</button></a>
+            </div> 
+        </form>
 
-    <div class="spacer2"></div>
-    <hr />
+        <div class="spacer2"></div>
+        <hr />
 
-    <hgroup class="head">
-        
-        <h1 style="font-size: 44px; font-weight: normal;" >Featured Tools</h1>
-        <h2> <b style="color: rgb(4, 161, 213);">{{ c_count }} </b>out of a total of <b style="color: rgb(4, 161, 213);">{{ count }} </b>tools</h2>
-        
-    </hgroup>
+        <hgroup class="head">
+            
+            <h1 style="font-size: 44px; font-weight: normal;" >Featured Tools</h1>
+            <h2> <b style="color: rgb(4, 161, 213);">{{ c_count }} </b>out of a total of <b style="color: rgb(4, 161, 213);">{{ count }} </b>tools</h2>
+            
+        </hgroup>
+
         {% endblock %}
+
         {% block container %} 
         <div class="featured-tools-container" >
             {% for Detail in Details %}
@@ -367,18 +356,19 @@
         </div>
         {% endblock %} 
     </section>
-    {% block Subscribe %}
 
+    {% block Subscribe %}
     <div class="apply-filter-btn" > 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXGiQBAVMQy3lXGkNdRwqgfWw20E_VlXODYloiMo7L3bwYCw/viewform?usp=sf_link" style="text-decoration: none;">
          <button id="filter_btn"  style="color: black; background-color: #ddd;">Contact Us </button>
         </a>
-     </div> 
+    </div> 
     
     
    
 </main>
 {% endblock %}
+
 {% block footer %}
 <div class="footer">
     <small>
@@ -386,6 +376,7 @@
     </small>
 </div>
 {% endblock %}
+
 {% block end %}
 </body>
 </html>

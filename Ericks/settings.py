@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-my4$fo99mqhay0)3hd@6q^$i*e0%a_86m_qgih9rbp_=a(!^=4
 DEBUG = False
 
 ALLOWED_HOSTS = ['aitools.myinsightiq.com']
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.128.156.10']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.128.156.10']
 
 
 # Application definition
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'Ericks.urls'
@@ -120,13 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_URL = "/static/"
+# STATIC_URL = "/static/"
 # Note: Replace 'supersecure.codes' with your domain
-STATIC_ROOT = "/var/www/aitools.myinsightiq.com/static"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATIC_ROOT = "/var/www/aitools.myinsightiq.com/static"
+# STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
