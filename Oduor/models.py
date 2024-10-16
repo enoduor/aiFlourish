@@ -21,4 +21,3 @@ class stuffs(models.Model):
         return self.name_of_tool
 
 
-

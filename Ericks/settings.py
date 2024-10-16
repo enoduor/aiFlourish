@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-my4$fo99mqhay0)3hd@6q^$i*e0%a_86m_qgih9rbp_=a(!^=4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['aitools.myinsightiq.com']
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.128.156.10']
