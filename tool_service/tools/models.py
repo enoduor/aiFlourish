@@ -5,5 +5,5 @@ class Tool(models.Model):
     description = models.TextField()
     website_link = models.URLField()
     youtube_link = models.URLField()
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    # category = models.ForeignKey('Category', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
