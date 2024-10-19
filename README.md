@@ -1,4 +1,3 @@
-```markdown
 # Myinsightiq AI Tools API Service
 
 ## Overview
@@ -114,7 +113,7 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 ## Contact
 
 For any inquiries or issues, please reach out to [your email](mailto:trulyhawona@gmail.com).
-```
+
 
 ### How to Save:
 1. Open your text editor or IDE.
