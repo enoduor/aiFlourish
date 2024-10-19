@@ -1,4 +1,5 @@
-# Myinsightiq AI Tools API Service
+
+# MyInsightIQ AI Tools API Service
 
 ## Overview
 
@@ -18,7 +19,7 @@ The Tools API Service is a microservice designed to manage and provide informati
 - Python 3.6 or higher
 - Django 3.2 or higher
 - Django Rest Framework
-- PostgreSQL/SQLite/MongoDB (or any other database of your choice)
+- PostgreSQL (or any other database of your choice)
 
 ### Steps
 
@@ -94,6 +95,90 @@ The Tools API Service is a microservice designed to manage and provide informati
 - **GET /api/categories/{id}/**
   - Retrieve detailed information about a specific category.
 
+## Testing the API Endpoints
+
+You can test the following API endpoints using **cURL** or **Postman**:
+
+### 1. Browse Tools
+**GET** `/api/tools/`
+
+```bash
+curl -X GET http://localhost:8000/api/tools/
+```
+*Expected Response:* A list of all tools in JSON format.
+
+### 2. View Tool Details
+**GET** `/api/tools/<tool_id>/`
+
+```bash
+curl -X GET http://localhost:8000/api/tools/1/
+```
+*Expected Response:* Details of the tool with ID 1 in JSON format.
+
+### 3. Filter Tools by Category
+**GET** `/api/tools/?category=<category_id>`
+
+```bash
+curl -X GET "http://localhost:8000/api/tools/?category=1"
+```
+*Expected Response:* A list of tools filtered by the specified category ID in JSON format.
+
+### 4. Search Tools
+**GET** `/api/tools/?search=<query>`
+
+```bash
+curl -X GET "http://localhost:8000/api/tools/?search=example"
+```
+*Expected Response:* A list of tools matching the search query in JSON format.
+
+### 5. Create New Tool
+**POST** `/api/tools/`
+
+```bash
+curl -X POST http://localhost:8000/api/tools/ \
+-H "Content-Type: application/json" \
+-d '{
+    "name": "New Tool",
+    "description": "Description of the new tool",
+    "category": 1,
+    "website": "https://example.com",
+    "video": "https://youtube.com/example"
+}'
+```
+*Expected Response:* The created tool's details in JSON format, including a unique ID.
+
+### 6. Edit Existing Tool
+**PUT** `/api/tools/<tool_id>/`
+
+```bash
+curl -X PUT http://localhost:8000/api/tools/1/ \
+-H "Content-Type: application/json" \
+-d '{
+    "name": "Updated Tool Name",
+    "description": "Updated description of the tool",
+    "category": 1,
+    "website": "https://example.com",
+    "video": "https://youtube.com/example"
+}'
+```
+*Expected Response:* The updated tool's details in JSON format.
+
+### 7. Delete Tool
+**DELETE** `/api/tools/<tool_id>/`
+
+```bash
+curl -X DELETE http://localhost:8000/api/tools/1/
+```
+*Expected Response:* A confirmation message indicating that the tool has been deleted (e.g., `{"message": "Tool deleted successfully."}`).
+
+### 8. Fetch Categories
+**GET** `/api/categories/`
+
+```bash
+curl -X GET http://localhost:8000/api/categories/
+```
+*Expected Response:* A list of all categories in JSON format.
+
 ## Testing
 
 To run the tests, use the following command:
@@ -106,17 +191,8 @@ python manage.py test
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
-
-## Contact
-
-For any inquiries or issues, please reach out to [your email](mailto:trulyhawona@gmail.com).
-
-
 ### How to Save:
 1. Open your text editor or IDE.
-2. Create a new file named `README.md`.
-3. Paste the content above into the file.
+2. Find your `README.md` file in your project.
+3. Replace the existing content with the updated content above.
 4. Save the file.
